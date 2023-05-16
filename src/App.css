@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500&display=swap');
+
+#root {
+  max-width: 1280px;
+  text-align: center;
+}
+
+body{
+  font-family: 'Raleway', sans-serif;
+  background: #fefae080;
+  }
+ 
+  
