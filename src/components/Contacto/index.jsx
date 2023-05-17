@@ -1,39 +1,12 @@
 import React from "react";
 import { styled } from "styled-components";
-import { TextField, TextareaAutosize } from "@mui/material";
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles({
-  textarea: {
-    backgroundColor: "transparent",
-    borderRadius: 4,
-    color: "#000000",
-    fontWeight: 500,
-    fontFamily: "Raleway",
-    fontSize: 16,
-    marginBottom: "25px",
-    marginTop: "35px",
-    width: "36vw",
-    height: 90,
-    border: "1px solid rgba(0, 0, 0, 0.23)",
-    "&:focus": {
-      border: "none",
-      fontFamily: "Raleway",
-      color: "#000000",
-      fontWeight: 400,
-      outline: "2px solid #e38512b9",
-    },
-    "@media screen and (max-width:1024px)": {
-      width: "20vw",
-    },
-    "@media screen and (max-width:768px)": {
-      width: '50vw',
-    },
-  },
-});
+import { TextField} from "@mui/material";
+import FacebookIcon from '@mui/icons-material/Facebook';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import EmailIcon from '@mui/icons-material/Email';
 
 const Contacto = () => {
-  const classes = useStyles();
   return (
     <Contenedor id="contacto">
       <ContenedorContacto>
@@ -49,19 +22,19 @@ const Contacto = () => {
           <ContenedorAna>
             <ul>
               <Lista>
-                <ListaW className="bx bxl-whatsapp"></ListaW>
+                <ListaW><WhatsAppIcon/></ListaW>
                 <ListaTitulo>+57 3xx-xxx-xxxx</ListaTitulo>
               </Lista>
               <Lista>
-                <ListaI className="bx bxl-instagram"></ListaI>
+                <ListaI><InstagramIcon/></ListaI>
                 <ListaTitulo>@example__1</ListaTitulo>
               </Lista>
               <Lista>
-                <ListaF className="bx bxl-facebook"></ListaF>
+                <ListaF><FacebookIcon/></ListaF>
                 <ListaTitulo>cuenta@example.com</ListaTitulo>
               </Lista>
               <Lista>
-                <ListaG className="bx bxl-gmail"></ListaG>
+                <ListaG><EmailIcon/></ListaG>
                 <ListaTitulo>cuenta@example.com</ListaTitulo>
               </Lista>
             </ul>
@@ -79,15 +52,17 @@ const Contacto = () => {
                 />
               </InputGroup>
             </FormularioParte>
-            <div>
-              <TextareaAutosize
-                aria-label="empty textarea"
-                placeholder="Hola Ana, me gustaría..."
-                className={classes.textarea}
-                maxRows={4}
-                style={{ height: 200 }}
+            <TextArea>
+              <TextField
+                id="outlined-multiline-static"
+                label="Mensaje"
+                multiline
+                rows={4}
+                defaultValue="Hola Ana, me gustaría cotizar..."
+                fullWidth 
+                color="warning"
               />
-            </div>
+            </TextArea>
 
             <Boton type="submit">ENVIAR</Boton>
           </Formulario>
@@ -177,6 +152,7 @@ const Formulario = styled.form`
   justify-content: space-between;
   align-items: center;
   border-radius: 15px;
+  padding: 20px;
 `;
 const FormularioParte = styled.div`
   display: flex;
@@ -190,8 +166,8 @@ const FormularioParte = styled.div`
 `;
 const InputGroup = styled.div`
   position: relative;
-  margin-top: 50px;
-  width: 250px;
+  margin-top: 20px;
+  width: 100%;
   @media screen and (max-width: 1024px) {
     margin-top: 30px;
     width: 75%;
@@ -208,3 +184,7 @@ const Boton = styled.button`
   letter-spacing: 1px;
   font-weight: 600;
 `;
+const TextArea = styled.div`
+  padding: 35px;
+  width: 100%;
+`
